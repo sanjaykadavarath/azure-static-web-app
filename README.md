@@ -1,39 +1,7 @@
-# azure-static-web-app
-This is a simple React app built with **Vite** and deployed using **Azure Static Web Apps** and **GitHub Actions**.
-Sure! Here's a full `README.md` file for your **Azure Static Web App** GitHub repository, including setup instructions, folder structure, and deployment info using GitHub Actions:
-
----
-
-```md
-# 🚀 Azure Static Web App
-
-This is a simple React app built with **Vite** and deployed using **Azure Static Web Apps** and **GitHub Actions**.
-
----
-
-## 📁 Project Structure
-
-```
-azure-static-web-app/
-├── .github/
-│   └── workflows/
-│       └── azure-static-web-app.yml   # GitHub Actions workflow for Azure deployment
-├── public/
-│   └── favicon.ico                    # App icon
-├── src/
-│   ├── App.jsx                        # Main component
-│   └── main.jsx                       # ReactDOM root
-├── index.html                         # Entry HTML file
-├── package.json                       # Project config and scripts
-├── vite.config.js                     # Vite configuration
-├── README.md                          # This file
-```
-
----
 
 ## ⚙️ Setup Instructions
 
-1. **Install Node.js & npm** (if not already installed)
+1. **Install Node.js & npm**
    ```bash
    node -v
    npm -v
@@ -68,15 +36,35 @@ git commit -m "Initial commit"
 git push -u origin main
 ```
 
-### Step 2: Create a Static Web App in Azure
+---
 
-1. Go to the [Azure Portal](https://portal.azure.com)
-2. Search for **Static Web Apps**
-3. Click **Create** and fill in:
-   - **GitHub Repository**: Select the repo you just pushed
-   - **App location**: `/`
-   - **Output location**: `dist`
-4. Azure will automatically configure GitHub Actions to deploy your app on push
+### Step 2: Create Static Web App on Azure
+
+Go to the [Azure Portal](https://portal.azure.com) and follow these steps:
+
+####  Search for "Static Web Apps"
+![image](https://github.com/user-attachments/assets/713d4565-542e-4506-b973-ec5e7c82583f)
+
+#### 🖼️ Screenshot 2: Click "Create" and Fill in App Details
+![Create Static Web App](screenshots/2-create-static-web-app.png)
+
+#### 🖼️ Screenshot 3: Connect to GitHub Repository
+![GitHub Connection](screenshots/3-github-connect.png)
+
+#### 🖼️ Screenshot 4: Configure Build Settings
+- App location: `/`
+- Output location: `dist`
+
+![Build Settings](screenshots/4-build-settings.png)
+
+---
+
+### Step 3: Monitor GitHub Actions
+
+Azure sets up a workflow that builds and deploys your app. Check the **Actions** tab in GitHub to see it running:
+
+#### 🖼️ Screenshot 5: GitHub Actions Deployment
+![GitHub Actions](screenshots/5-github-actions.png)
 
 ---
 
@@ -85,24 +73,50 @@ git push -u origin main
 The file `.github/workflows/azure-static-web-app.yml` handles:
 - Installing dependencies
 - Building the project
-- Deploying to Azure Static Web Apps using a secret token
+- Deploying to Azure Static Web Apps
 
-### Add this secret in GitHub:
-
+#### ➕ Add this secret in GitHub:
 - Go to your repo → Settings → Secrets → Actions
-- Add: `Your API Token`
+- Add: `AZURE_STATIC_WEB_APPS_API_TOKEN`
 
 ---
 
 ## 📦 Technology Stack
 
 - ⚛️ **React 18**
-- ⚡ **Vite** for fast builds
+- ⚡ **Vite**
 - ☁️ **Azure Static Web Apps**
-- 🔁 **GitHub Actions** for CI/CD
+- 🔁 **GitHub Actions**
+
+---
+
+## 🌐 Custom Domain Setup (Optional)
+
+1. Go to your Static Web App in Azure
+2. Click on **"Custom domains"**
+3. Add your domain and update your DNS records accordingly
+
+#### 🖼️ Screenshot 6: Add Custom Domain
+![Custom Domain](screenshots/6-custom-domain.png)
 
 ---
 
 ## 📄 License
 
 This project is open-source and free to use under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Acknowledgments
+
+Thanks to Microsoft Azure and GitHub for enabling free and simple CI/CD deployments.
+```
+
+---
+
+📸 **To complete the README:**
+1. Create a folder called `screenshots/` in your GitHub repo.
+2. Add the actual screenshots with matching names (`1-search-static-web-apps.png`, etc.).
+3. GitHub will render the images automatically.
+
+Would you like help generating or taking any of these screenshots manually or via automation?
