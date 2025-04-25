@@ -90,7 +90,7 @@ The file `.github/workflows/azure-static-web-app.yml` handles:
 ### Add this secret in GitHub:
 
 - Go to your repo → Settings → Secrets → Actions
-- Add: `AZURE_STATIC_WEB_APPS_API_TOKEN`
+- Add: `Your API Token`
 
 ---
 
@@ -106,14 +106,3 @@ The file `.github/workflows/azure-static-web-app.yml` handles:
 ## 📄 License
 
 This project is open-source and free to use under the [MIT License](LICENSE).
-
----
-
-## 🙌 Acknowledgments
-
-Thanks to Microsoft Azure and GitHub for their powerful free-tier web app hosting services.
-```
-
----
-
-Let me know if you want to include screenshots, a custom domain setup section, or a backend API example!
